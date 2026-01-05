@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Ecommerce Website">
+  <meta name="keywords" content="add to cart, buy, shipped">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THRIFT AF WEBSITE</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="author" content="Nick Ndeda">
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 id="welcome"></h1>
+    <div class="logo">
+      <h1>THRIFT <span>AF</span></h1>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="collection.html">Collections</a>
+      <a href="contact.html">Contact</a><br>
+    </nav>
+    <div class="nav-icons">
+      <span class="cart-icon">🛒</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Stay ✈️ in the latest streetwear fashion</h2>
+    <p>Shop exclusive fashion pieces, jewelry, and accessories from Thrift AF.</p>
+    <button class="shop-btn" onclick="goToPage()">Shop Now</button>
+  </section>
+
+  <section class="deals">
+  <h2>🔥 Today's Deals</h2>
+  <div class="product-grid">
+    <div class="product">
+      <img src="iced chain.jpg" alt="Iced Chain">
+      <h3>Iced Chain</h3>
+      <p>KSh 1500</p>
+      <button class="add-to-cart" data-name="Iced Chain" data-price="1500" data-image="iced chain.jpg">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="watch.jpg" alt="Luxury Watch">
+      <h3>Luxury Watch</h3>
+      <p>KSh 3200</p>
+      <button class="add-to-cart" data-name="Luxury Watch" data-price="3200" data-image="watch.jpg">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="balaclava 1.jpg" alt="Balaclava">
+      <h3>Balaclava</h3>
+      <p>KSh 800</p>
+      <button class="add-to-cart" data-name="Balaclava" data-price="800" data-image="balaclava 1.jpg">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="hoodie 2.jpg" alt="Hoodie">
+      <h3>Hoodie</h3>
+      <p>KSh 2000</p>
+      <button class="add-to-cart" data-name="Hoodie" data-price="2000" data-image="hoodie 2.jpg">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="pants 1.jpg" alt="Pants">
+      <h3>Pants</h3>
+      <p>KSh 1700</p>
+      <button class="add-to-cart" data-name="Pants" data-price="1700" data-image="pants 1.jpg">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="bracelet 1.png" alt="Bracelet">
+      <h3>Bracelet</h3>
+      <p>KSh 900</p>
+      <button class="add-to-cart" data-name="Bracelet" data-price="900" data-image="bracelet 1.png">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="ski mask 1.jpg" alt="Ski Mask">
+      <h3>Ski Mask</h3>
+      <p>KSh 950</p>
+      <button class="add-to-cart" data-name="Ski Mask" data-price="950" data-image="ski mask 1.jpg">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="ring 4.jpg" alt="Ring">
+      <h3>Ring</h3>
+      <p>KSh 1200</p>
+      <button class="add-to-cart" data-name="Ring" data-price="1200" data-image="ring 4.jpg">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="streetwear 3.jpg" alt="Streetwear Set">
+      <h3>Streetwear Set</h3>
+      <p>KSh 2800</p>
+      <button class="add-to-cart" data-name="Streetwear Set" data-price="2800" data-image="streetwear 3.jpg">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="jorts 1.jpg" alt="Jorts">
+      <h3>Jorts</h3>
+      <p>KSh 1500</p>
+      <button class="add-to-cart" data-name="Jorts" data-price="1500" data-image="jorts 1.jpg">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <p>© 2025 Thrift AF. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function goToPage() {
+      window.location.href = "shop.html";
+    }
+
+    const username = sessionStorage.getItem("username");
+    if (username) {
+      document.getElementById("welcome").innerText = `Welcome, ${username}! 👋`;
+    } else {
+      window.location.href = "login.html";
+    }
+
+   document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", () => {
+      const name = button.getAttribute("data-name");
+      const price = button.getAttribute("data-price");
+      const image = button.getAttribute("data-image");
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.name === name);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ name, price, image, quantity: 1 });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart 🛒`);
+      });
+    });
+
+    const cartIcon = document.querySelector(".cart-icon");
+    if (cartIcon) {
+      cartIcon.addEventListener("click", () => {
+        window.location.href = "cart.html";
+      });
+    }
+  </script>
+
+</body>
+</html>

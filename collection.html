@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thrift AF | Collection</title>
+  <link rel="stylesheet" href="header.css">
+</head>
+<body>
+  <header><h1>THRIFT AF</h1></header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="collection.html">Collection</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <h2>Featured Collections</h2>
+    <p>Explore our top picks — Semester Clearance, Streetwear, Jewelry & More</p>
+    <div class="product-grid">
+      <div class="carousel">
+        <div class="slide active"><img src="balaclava 1.jpg" alt="Collection 1"></div>
+        <div class="slide"><img src="balaclava 2.jpg" alt="Collection 2"></div>
+        <div class="slide"><img src="balaclava 3.jpg" alt="Collection 3"></div>
+        <div class="slide"><img src="balaclava 3.jpg" alt="Collection 4"></div>
+      </div>
+      <div class="carousel">
+        <div class="slide active"><img src="ski mask 1.jpg" alt="Collection 1"></div>
+        <div class="slide"><img src="ski mask 2.jpg" alt="Collection 2"></div>
+        <div class="slide"><img src="ski mask 3.jpg" alt="Collection 3"></div>
+        <div class="slide"><img src="ski mak 4.jpg" alt="Collection 4"></div>
+      </div>
+      <div class="carousel">
+        <div class="slide active"><img src="streetwear.jpg" alt="Collection 1"></div>
+        <div class="slide"><img src="streetwear  2.jpg" alt="Collection 2"></div>
+        <div class="slide"><img src="streetwear 3.jpg" alt="Collection 3"></div>
+        <div class="slide"><img src="streetwear 4.jpg" alt="Collection 4"></div>
+      </div>
+      <div class="carousel" >
+        <div class="slide active"><img src="jorts 1.jpg" alt="Collection 1"></div>
+        <div class="slide"><img src="jorts 2.jpg" alt="Collection 2"></div>
+        <div class="slide"><img src="jorts 3.jpg" alt="Collection 3"></div>
+        <div class="slide"><img src="jorts 4.jpg" alt="Collection 4"></div>
+      </div>
+      <div class="carousel">
+        <div class="slide active"><img src="hooodie 1.jpg" alt="Collection 1"></div>
+        <div class="slide"><img src="hoodie 2.jpg" alt="Collection 2"></div>
+        <div class="slide"><img src="hoodie 3.jpg" alt="Collection 3"></div>
+        <div class="slide"><img src="hoodie 4.jpg" alt="Collection 4"></div>
+      </div>
+      <div class="carousel">
+        <div class="slide active"><img src="pants 1.jpg" alt="Collection 1"></div>
+        <div class="slide"><img src="pants 2.jpg" alt="Collection 2"></div>
+        <div class="slide"><img src="pants 3.jpg" alt="Collection 3"></div>
+        <div class="slide"><img src="pants 4.jpg" alt="Collection 4"></div>
+      </div>
+    </div>
+  </main>
+  <footer><p>&copy; 2025 Thrift AF. All rights reserved.</p></footer>
+    <script>
+      const carousels = document.querySelectorAll('.carousel');
+      let index = 0;
+
+      setInterval(() => {
+        carousels.forEach(carousel => {
+          const slides = carousel.querySelectorAll('.slide');
+          slides.forEach(slide => slide.classList.remove('active'));
+          index = (index + 1) % slides.length;
+          slides[index].classList.add('active');
+        });
+      }, 2000);
+    </script>
+
+</body>
+</html>
