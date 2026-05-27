@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background: #0d0d0d;
+  border: 1px solid #161616;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.product:hover {
+  border-color: rgba(255, 184, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.product-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #111;
+}
+
+.product img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product:hover img {
+  transform: scale(1.04);
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #ffb800;
+  color: #000;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.product-info {
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.product h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ddd;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.product p {
+  color: #ffb800;
+  font-weight: 600;
+  font-size: 15px;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.add-to-cart {
+  background: transparent;
+  color: #555;
+  border: 1px solid #222;
+  padding: 7px 14px;
+  border-radius: 3px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.add-to-cart:hover {
+  border-color: #ffb800;
+  color: #ffb800;
+  background: rgba(255, 184, 0, 0.05);
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product-info {
+    padding: 12px 14px 16px;
+  }
+
+  .product h3 {
+    font-size: 13px;
+  }
+}

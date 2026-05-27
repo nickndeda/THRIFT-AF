@@ -1,0 +1,95 @@
+.collections-container {
+  margin-top: 80px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 60px 40px;
+}
+
+.collections-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.collection-subtitle {
+  text-align: center;
+  color: #ddd;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.collection-card {
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  height: 300px;
+}
+
+.slides-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection-card:hover .slide img {
+  transform: scale(1.05);
+}
+
+.collection-card:hover .slide.active img {
+  transform: scale(1.05);
+}
+
+.collection-card h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 20px;
+  color: #fff;
+  margin: 0;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .collections-container {
+    padding: 40px 20px;
+  }
+
+  .collections-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .collection-card {
+    height: 200px;
+  }
+}

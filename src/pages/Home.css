@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+.home-container {
+  margin-top: 64px;
+  padding-bottom: 60px;
+  background: #080808;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding: 100px 60px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 184, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: 'THRIFT AF';
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22vw;
+  color: rgba(255, 184, 0, 0.025);
+  right: -2%;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  letter-spacing: -4px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffb800;
+  margin-bottom: 28px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #ffb800;
+}
+
+.hero h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 0.95;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 28px;
+  max-width: 700px;
+}
+
+.hero h2 em {
+  font-style: normal;
+  color: #ffb800;
+}
+
+.hero p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 48px;
+  max-width: 440px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.shop-btn {
+  background: #ffb800;
+  color: #000;
+  border: none;
+  padding: 14px 36px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.shop-btn:hover {
+  background: #ffd040;
+  transform: translateY(-1px);
+}
+
+.hero-link {
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  border-bottom: 1px solid #333;
+  padding-bottom: 2px;
+}
+
+.hero-link:hover {
+  color: #ffb800;
+  border-bottom-color: #ffb800;
+}
+
+/* ===== DEALS SECTION ===== */
+.deals {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 184, 0, 0.08);
+  padding-bottom: 20px;
+}
+
+.section-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.section-header span {
+  font-size: 12px;
+  color: #444;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 32px 20px;
+  border-top: 1px solid rgba(255, 184, 0, 0.08);
+  font-size: 12px;
+  color: #333;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 24px;
+  }
+
+  .deals {
+    padding: 48px 20px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

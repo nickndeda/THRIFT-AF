@@ -1,0 +1,63 @@
+.shop-container {
+  margin-top: 80px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 20px;
+}
+
+.shop-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.filter-section {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: rgba(255, 184, 0, 0.1);
+  color: #ddd;
+  border: 2px solid rgba(255, 184, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  border-color: #ffb800;
+  color: #ffb800;
+}
+
+.filter-btn.active {
+  background: #ffb800;
+  color: #000;
+  border-color: #ffb800;
+}
+
+@media (max-width: 768px) {
+  .shop-container {
+    padding: 20px 10px;
+  }
+
+  .shop-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .filter-section {
+    gap: 10px;
+  }
+
+  .filter-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
